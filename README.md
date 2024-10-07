@@ -1,6 +1,6 @@
-# carnage-raffle
+# Dremica-carnage-raffle
 
-To pick the lottery winners via a publicly verifiable random seed - we’ll be using the hash from Exosama network block #12287000. The alphabetic values will be stripped from the hash and only the numeric values will be used as the seed.
+To pick the Bigger Boy Head raffle winners via a publicly verifiable random seed - we’ll be using the hash from Exosama network block #12287000. The alphabetic values will be stripped from the hash and only the numeric values will be used as the seed.
 
 https://explorer.exosama.com/block/12287000/transactions
 
@@ -9,15 +9,15 @@ yarn
 node index.js
 ```
 
-Then check [winners](./winners.json).
+Then check [drawing_winner](./drawing_winner.json).
 
-# lootbox-raffle-test
+# Dremica-carnage-raffle
 
-to test the lootbox raffle logic:
+to test the the raffle logic:
 
 ```
 yarn
-cd lootbox
+cd Dremica_carnage_raffle
 node index.js
 
 ```
