@@ -6,7 +6,7 @@ https://explorer.exosama.com/block/12410000/transactions
 
 ```
 yarn
-node index.js
+node drawing.js
 ```
 
 Then check [drawing_winner](./drawing_winner.json).
