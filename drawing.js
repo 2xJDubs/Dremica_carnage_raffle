@@ -1,11 +1,11 @@
 const seedrandom = require("seedrandom");
 const fs = require("fs");
 
-// Hash from block #8535000
+// Hash from block #12410000
 const hash =
-  "0x093efa911694a307448ce78e88aecfb56c740f0e4c9ea3eff1e6b01868ff2022";
+  "0x9b5b5adde42ed7175428fc4f6331219565b9e339954c9730bd3009f80d9f65cf";
 
-// isolate all numeric values from hash. ouput: '07366801591728373564622813150817306143240'
+// isolate all numeric values from hash. ouput: '09554271754284633121956593399549730300980965'
 
 const seed = hash.replace(/[a-zA-Z]/g, "");
 
@@ -13,11 +13,9 @@ console.log("seed", seed);
 
 const rng = seedrandom(seed);
 
-const data = JSON.parse(fs.readFileSync("leaderboard.json"));
+const raffle = JSON.parse(fs.readFileSync("dremica-raffle-2024-10-06.json"));
 
-const leaders = data.leaderboards[0].leaderboard;
-
-const list = leaders.filter((item) => item.amount > 0);
+const list = raffle.filter((item) => item.head > 0);
 
 // sort by amount in descending order
 list.sort((a, b) => b.amount - a.amount);
@@ -26,10 +24,10 @@ list.sort((a, b) => b.amount - a.amount);
 const names = [];
 const weights = [];
 list
-  .filter((item) => item["amount"] !== "0")
+  .filter((item) => item["head"] !== "0")
   .map((item) => {
-    names.push(item["name"]);
-    weights.push(item["amount"]);
+    names.push(item["gamerTag"]);
+    weights.push(item["head"]);
   });
 
 // draw 1 unique winner
@@ -73,4 +71,4 @@ const sortedWinners = Object.entries(winners)
     return obj;
   }, {});
 
-fs.writeFileSync("drawing_winner.json", JSON.stringify(sortedWinners, null, 2));
+fs.writeFileSync("Dremica_drawing_winner.json", JSON.stringify(sortedWinners, null, 2));
