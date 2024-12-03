@@ -1,11 +1,11 @@
 const seedrandom = require("seedrandom");
 const fs = require("fs");
 
-// Hash from block #13115000
+// Hash from block #13370000
 const hash =
-  "0x91eda80ca809a7913113c456a149cde9849751b776dc7b12fad158301d547f9d";
+  "0x2e46bfb18eabecb788518ac6c1b04261bd689a79ad151fbba7b1115dafe3125e";
 
-// isolate all numeric values from hash. ouput: '09180809791311345614998497517767121583015479'
+// isolate all numeric values from hash. ouput: '024618788518610426168979151711153125'
 
 const seed = hash.replace(/[a-zA-Z]/g, "");
 
@@ -13,7 +13,7 @@ console.log("seed", seed);
 
 const rng = seedrandom(seed);
 
-const raffle = JSON.parse(fs.readFileSync("dremica-raffle-2024-11-17.json"));
+const raffle = JSON.parse(fs.readFileSync("dremica-raffle-2024-12-01.json"));
 
 const list = raffle.filter((item) => item.head > 0);
 
